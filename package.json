@@ -4,6 +4,14 @@
   "private": true,
   "description": "A dedicated lane for agents that use WebMCP tools: short-lived signed passes, explicit budgets and an activity log.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nekuda-ai/webmcp-agentlane.git"
+  },
+  "homepage": "https://github.com/nekuda-ai/webmcp-agentlane#readme",
+  "bugs": {
+    "url": "https://github.com/nekuda-ai/webmcp-agentlane/issues"
+  },
   "type": "module",
   "exports": {
     "./core": "./src/core/index.js",

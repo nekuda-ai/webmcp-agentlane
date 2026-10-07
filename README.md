@@ -47,7 +47,7 @@ For the wire format, the server checks and the error codes, see [SPEC.md](SPEC.m
 
 These steps add the agent lane to a Cloudflare Worker. For more, see [docs/cloudflare.md](docs/cloudflare.md) and [examples/worker](examples/worker).
 
-1. Install the package. The repository is private, so you need read access to it.
+1. Install the package from GitHub.
    ```sh
    npm install github:nekuda-ai/webmcp-agentlane
    ```

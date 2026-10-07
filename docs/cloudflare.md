@@ -29,7 +29,7 @@ You can also import `wafRules` from `@nekuda/webmcp-agentlane/cloudflare/waf`.
 
 ### 1. Install the package
 
-The repository is private, so you need read access to it.
+Install it from GitHub:
 
 ```sh
 npm install github:nekuda-ai/webmcp-agentlane

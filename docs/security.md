@@ -158,4 +158,5 @@ Do not log the lane headers in the site handler.
 ## Report a security problem
 
 Do not open a public issue for a security problem.
-Tell the maintainers at nekuda.ai in private.
+Report it in private: open the **Security** tab of the repository and select **Report a vulnerability**.
+See [SECURITY.md](../SECURITY.md).
