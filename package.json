@@ -1,0 +1,24 @@
+{
+  "name": "@nekuda/webmcp-agentlane",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A dedicated lane for agents that use WebMCP tools: short-lived signed passes, explicit budgets and an activity log.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./core": "./src/core/index.js",
+    "./cloudflare": "./src/cloudflare/index.js",
+    "./cloudflare/waf": "./src/cloudflare/waf.js",
+    "./browser": "./src/browser/agentlane.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "example": "wrangler dev --config examples/worker/wrangler.jsonc"
+  },
+  "devDependencies": {
+    "wrangler": "^4.148.0"
+  }
+}

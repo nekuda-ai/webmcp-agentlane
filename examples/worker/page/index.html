@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes - agent lane example</title>
+<!-- The Worker puts a new nonce in place of __NONCE__ for each page. -->
+<style nonce="__NONCE__">
+  :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.5; }
+  body { margin: 0; }
+  main { max-width: 40rem; margin: 0 auto; padding: 1rem; }
+  .demo { padding: 0.5rem 0.75rem; border: 1px solid; border-radius: 6px; }
+  form { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: end; margin: 0.5rem 0 1rem; }
+  label { display: flex; flex-direction: column; flex: 1 1 12rem; }
+  input, button { font: inherit; padding: 0.35rem 0.6rem; }
+  ul { padding-left: 1.2rem; }
+  .lane { font-size: 0.8em; padding: 0 0.4rem; border: 1px solid; border-radius: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+  th, td { text-align: left; padding: 0.25rem 0.5rem; border-bottom: 1px solid #8884; }
+  [hidden] { display: none !important; }
+</style>
+<script type="module" nonce="__NONCE__" src="/app.js"></script>
+</head>
+<body>
+<main>
+  <h1>Notes</h1>
+  <p class="demo">Demo only. The sign-in has no password, and the notes stay in the memory of the Worker.</p>
+  <p id="status" role="status"></p>
+
+  <section id="signed-out" hidden>
+    <h2>Sign in</h2>
+    <form id="sign-in">
+      <label>Name
+        <input name="name" required maxlength="32" pattern="[A-Za-z0-9_\-]{1,32}" autocomplete="username">
+      </label>
+      <button type="submit">Sign in</button>
+    </form>
+  </section>
+
+  <section id="signed-in" hidden>
+    <p>You are signed in as <strong id="person"></strong>. <button id="sign-out" type="button">Sign out</button></p>
+
+    <h2>Your notes</h2>
+    <form id="add-note">
+      <label>New note
+        <input name="text" required maxlength="280">
+      </label>
+      <button type="submit">Add the note</button>
+    </form>
+    <ul id="notes"></ul>
+
+    <h2>Agent activity</h2>
+    <p>The agent lane records each tool request and its result. <button id="refresh" type="button">Refresh</button></p>
+    <table>
+      <thead><tr><th>Time</th><th>Action</th><th>Status</th><th>Code</th></tr></thead>
+      <tbody id="activity"></tbody>
+    </table>
+    <p id="no-activity">There is no agent activity.</p>
+  </section>
+</main>
+</body>
+</html>

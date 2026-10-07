@@ -1,0 +1,5 @@
+# Local secrets for "npx wrangler dev".
+# Copy this file to .dev.vars. Do not commit .dev.vars.
+# Replace the value with a random secret of 32 characters or more.
+# To make one, run: openssl rand -hex 32
+AGENTLANE_SECRET=replace-with-a-random-secret

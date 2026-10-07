@@ -1,0 +1,25 @@
+// Wrangler configuration of the notes example.
+// Run the example on your computer with "npx wrangler dev". See README.md.
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "agentlane-notes-example",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+
+  // Import the page files and the lane client as text. The Worker serves them.
+  // "fallthrough" keeps the default rules, which import *.html as text.
+  "rules": [
+    { "type": "Text", "globs": ["**/src/browser/agentlane.js", "**/page/*.js"], "fallthrough": true }
+  ],
+
+  // The agent lane store: 1 Durable Object for each signed-in session.
+  "durable_objects": {
+    "bindings": [{ "name": "AGENTLANE", "class_name": "AgentLaneStore" }]
+  },
+  // The store keeps its data in SQLite.
+  "migrations": [{ "tag": "agentlane-v1", "new_sqlite_classes": ["AgentLaneStore"] }]
+
+  // The signing secret AGENTLANE_SECRET is not in this file.
+  // On your computer: copy .dev.vars.example to .dev.vars and set the value.
+  // On Cloudflare: npx wrangler secret put AGENTLANE_SECRET
+}

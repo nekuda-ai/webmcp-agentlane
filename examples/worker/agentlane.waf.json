@@ -1,0 +1,8 @@
+{
+  "host": "notes.example.com",
+  "scope": ["GET /api/notes", "POST /api/notes"],
+  "ttlSeconds": 900,
+  "headers": { "reference": "X-Agent-Session", "proof": "X-Agent-Proof" },
+  "origin": "https://notes.example.com",
+  "passPath": "/agentlane/pass"
+}
